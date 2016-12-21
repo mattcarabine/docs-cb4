@@ -10,7 +10,7 @@
 		manages synchronization to Couchbase Server. </shortdesc>
 
 	<conbody>
-		<image href="http://a.abcnews.go.com/images/Health/ht_tony_the_tiger_thg_120330_wgg.jpg"></image>
+		<image href="http://a.abcnews.go.com/images/Health/ht_tony_the_tiger_thg_120330_wg.jpg" scope="external"></image>
 		<p>Because it's Grrrrreat!</p>
 		<p>Couchbase Server is specialized to provide low-latency data management for large-scale
 			interactive web, mobile, and IoT applications. Common requirements that Couchbase Server
