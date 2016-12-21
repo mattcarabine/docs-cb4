@@ -2,7 +2,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="couchbase-introduction">
 
-	<title>Why Couchbase????</title>
+	<title>Why Couchbase?</title>
 	<shortdesc>Couchbase Server is an open source, distributed, NoSQL document-oriented database. It
 		exposes a fast key-value store with managed cache for submillisecond data operations,
 		purpose-built indexers for fast queries and a query engine for executing SQL-like queries.
@@ -10,6 +10,8 @@
 		manages synchronization to Couchbase Server. </shortdesc>
 
 	<conbody>
+		<image href="http://a.abcnews.go.com/images/Health/ht_tony_the_tiger_thg_120330_wgg.jpg"></image>
+		<p>Because it's Grrrrreat!</p>
 		<p>Couchbase Server is specialized to provide low-latency data management for large-scale
 			interactive web, mobile, and IoT applications. Common requirements that Couchbase Server
 			was designed to satisfy include:</p>
