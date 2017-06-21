@@ -16,7 +16,7 @@
 			creation operation happens in the background.</p>
 		<p>Both GSI and View indexes provide a status field and mark index status pending. With GSI
 			indexer, index status continues to report "pending". This status field and other index
-			metadata can be queried using system:indexes.</p>
+			metadata can be queried using <codeph>system:indexes</codeph>.</p>
 		<p><b>RBAC Privileges</b></p>
 		<p>User executing the CREATE INDEX statement must have the <i>Query Manage Index</i> privilege
 			granted on the keyspace/bucket. For more details about user roles, see <xref
@@ -75,9 +75,11 @@
 			the index, based on the number of replicas. Multiple nodes can be specified to
 			distribute replicas of an index amongst multiple nodes, for
 			example:<codeblock conref="../../indexes/index-replication.dita#topic_axj_xtr_zz/nodes-example"/></p>
-		<p>If specifying both <varname>nodes</varname> and <varname>num_replica</varname>, the
-			number of nodes in the array must be one greater than the specified number of replicas
-			otherwise the index creation will fail.</p>
+		<p>If specifying both <varname>nodes</varname> and <varname>num_replica</varname>, the number of
+			nodes in the array must be one greater than the specified number of replicas otherwise
+			the index creation will fail. See <xref
+				href="../../indexes/index-replication.dita#topic_axj_xtr_zz"/> for further
+			details.</p>
 		<note type="important">The node names passed to the <codeph>nodes</codeph> parameter must
 			include the cluster administration port (by default 8091). For example <codeph>WITH
 				{"nodes": ["192.0.2.0:8091"]}</codeph> instead of <codeph>WITH {"nodes":
@@ -92,13 +94,15 @@
 		<p>With defer_build set to false, CREATE INDEX operation queues the task for building the
 			index and immediately kicks off the building of the index of type GSI. </p>
 		<p><i>"num_replica": num_replica</i></p>
-		<p><varname>num_replica</varname> specifies the number of replicas of the index to create.
-			The indexer will automatically distribute these indexes amongst index nodes in the
-			cluster for load balancing and high availability purposes. When creating an index with
-			replicas in this manner, the indexer will attempt to distribute the replicas based on
-			the server groups in use in the cluster where possible. If the value passed to
+		<p><varname>num_replica</varname> specifies the number of replicas of the index to create. The
+			indexer will automatically distribute these indexes amongst index nodes in the cluster
+			for load balancing and high availability purposes. When creating an index with replicas
+			in this manner, the indexer will attempt to distribute the replicas based on the server
+			groups in use in the cluster where possible. If the value passed to
 				<varname>num_replica</varname> is not less than the number of index nodes in the
-			cluster then the index creation will fail.</p>
+			cluster then the index creation will fail. See <xref
+				href="../../indexes/index-replication.dita#topic_axj_xtr_zz"/> for further
+			details.</p>
 		<note type="attention">We recommend that you do not create (or drop) secondary indexes when
 			any node with a secondary index role is down as this may result in duplicate index
 			names. </note>
@@ -160,4 +164,8 @@ SELECT * FROM system:indexes WHERE name="beer-sample-type-index";</codeblock>
 			</ul>
 		</section>
 	</conbody>
+	<related-links>
+		<link href="dropindex.dita#concept_jbf_qth_rq"/>
+		<link href="../../indexes/index-replication.dita#topic_axj_xtr_zz"/>
+	</related-links>
 </concept>
